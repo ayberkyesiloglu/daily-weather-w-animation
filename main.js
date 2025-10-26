@@ -74,7 +74,7 @@ function startRainSound(){
   noiseSource.start();
   lfo.start();
   rainPlaying = true;
-  soundBtn.textContent = 'Sound: On';
+  soundBtn.textContent = 'Ses: Açık';
 }
 
 function stopRainSound(){
@@ -84,7 +84,7 @@ function stopRainSound(){
     audioCtx.close();
   }catch(e){ console.warn(e); }
   audioCtx = null; noiseSource = null; noiseGain = null; rainPlaying = false;
-  soundBtn.textContent = 'Sound: Off';
+  soundBtn.textContent = 'Ses: Kapalı';
 }
 
 soundBtn.addEventListener('click', ()=>{
@@ -268,4 +268,5 @@ window.addEventListener('load', ()=>{
       }catch(e){ console.warn('Auto geolocation failed', e); }
     }, (err)=>{ statusMsg.textContent='Konum gerekli değil — arama veya "Konumuma Göre" kullanabilirsiniz.'; }, {timeout:5000});
   } else { statusMsg.textContent='Tarayıcınız konumu desteklemiyor — arama yapabilirsiniz.'; }
+
 });
