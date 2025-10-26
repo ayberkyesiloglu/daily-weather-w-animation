@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Animasyonlu Hava Durumu — Ses & Slider</title>
+<link rel="stylesheet" href="/daily-weather-w-sound/css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div id="bg" class="bg-layer" aria-hidden="true"></div>
+
+    <div class="card" role="main" aria-live="polite">
+      <header>
+        <h1>Animasyonlu Hava Durumu</h1>
+        <div class="controls">
+          <button id="locBtn" class="btn">Konumuma Göre</button>
+
+          <!-- Sound toggle + slider -->
+          <div class="sound-control" title="Sound: tıklayınca başlar">
+            <button id="soundBtn" class="btn">Ses: Kapalı</button>
+            <input id="soundSlider" type="range" min="0" max="100" step="1" value="50" aria-label="Sound intensity"/>
+          </div>
+
+          <button id="themeBtn" class="btn">Tema</button>
+          <button id="unitBtn" class="btn">°C</button>
+        </div>
+      </header>
+
+      <div class="search">
+        <input id="query" placeholder="Şehir veya konum (örn. Istanbul)" aria-label="Konum ara"/>
+        <button id="searchBtn" class="btn primary">Ara</button>
+      </div>
+
+      <div class="main-grid">
+        <div>
+          <div id="weather" class="weather-box">
+            <div class="location" id="locName">—</div>
+            <div class="temp-row">
+              <div id="iconWrap" class="icon" aria-hidden="true"></div>
+              <div>
+                <div class="temp" id="temp">--°</div>
+                <div class="meta" id="meta">—</div>
+                <div class="desc" id="desc">—</div>
+              </div>
+            </div>
+
+            <div id="details" style="margin-top:.8rem; display:flex; gap:1rem; flex-wrap:wrap;">
+              <div class="small">Rüzgâr: <span id="wind">—</span></div>
+              <div class="small">Basınç: <span id="press">—</span></div>
+              <div class="small">Nem: <span id="hum">—</span></div>
+            </div>
+
+            <div class="forecast" id="forecast" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <aside class="side">
+          <div class="weather-box">
+            <div class="small"><strong>Durum:</strong></div>
+            <div id="statusMsg" class="notice">Konum veya arama yapın.</div>
+          </div>
+
+          <div class="weather-box">
+            <div class="small"><strong>Notlar</strong></div>
+            <ul style="margin-top:.6rem; color:var(--muted); font-size:.95rem; line-height:1.45">
+              <li>Konum için tarayıcı izni gereklidir.</li>
+              <li>Arama sonuçları birden fazla olabilir; ilk bulunan sonuç gösterilir.</li>
+              <li>Veri kaynağı: <a style="color:var(--accent)" href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <footer>Hazırlayan — <a href="http://github.io/ayberkyesiloglu">ayberkyesiloglu </a> © 2025 • API: Open-Meteo</footer>
+    </div>
+  </div>
+
+<script src="/daily-weather-w-sound/js/main.js"></script>
+</body>
+</html>
